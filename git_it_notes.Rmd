@@ -1,0 +1,122 @@
+---
+title: "Git It Notes"
+author: "Christina Chen"
+date: "2023-08-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Initial Set Up
+
+```{bash to check what version of git you are on}
+git --version
+```
+
+```{bash set your name and email}
+git config --global user.name "christina"
+git config --global user.email "omqchristi@gmail.com"
+```
+
+- repositories are collections of related items -- basically folders full of stuff
+- git tracks everything that happens to in the folder; if things are added/deleted/changed (this is known as version control)
+
+# Making a New Directory
+
+```{bash make a directory named "hello-world"}
+mkdir hello-world
+```
+
+[mkdir] make a directory/folder
+
+```{bash change directory into "hello-world"}
+cd hello-world
+```
+
+[cd] change directory
+
+# Starting to Track with Git
+
+## General Information
+
+from now on, this script is in the "hello-world" folder, as if you have changed directory into the hello-world folder
+```{bash tell git to start tracking the folder you are in right now}
+git init
+```
+
+```{bash check if you are in a git repository}
+git status
+```
+
+```{bash list the files in the directory you are in}
+ls
+```
+
+[ls] to list all the files in the directory you are in
+
+## Commiting Files
+
+add a text file to see changes to the status:
+
+```{bash after adding a text file, check the status of your repository}
+git status
+```
+
+there is now 1 untracked file. add and commit it to the main branch:
+1. use [git add (name of file)] to add the file or [git add .] to add all file changes
+2. use [git commit -m "(insert message here)"] to commit the file
+
+```{bash use git add and git commit to }
+git add readme.txt
+git commit -m "created readme file"
+git status
+```
+
+## Committing Changes
+
+the original readme.txt file has been changed, track the difference with [git diff]
+
+``` {bash using git diff}
+git diff
+```
+
+commit the new change:
+
+```{bash commiting changes}
+git add readme.txt
+git commit -m "added to readme.txt"
+git status
+```
+
+# Connecting to Github
+
+```{bash adding your github account}
+git config --global user.username omqchristi
+git config --global user.username
+```
+
+## Connecting Local Repository to Remote Repository
+
+```{bash}
+
+```
+
+
+
+
+
+
+
+
+
+
+### Common Files in Public Repositories
+
+1. readme files:
+  - explain what the repository does
+  - how to use the repository
+  - and maybe how to contribute to the file
+2. .gitignore is a list of files that git should not track, possibly because it has sensitive information
+3. license files is the type of license your project is under. this lets other people know how and if they can use it.
