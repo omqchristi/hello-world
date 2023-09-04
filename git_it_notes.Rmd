@@ -99,13 +99,32 @@ git config --global user.username
 
 ## Connecting Local Repository to Remote Repository
 
-```{bash}
+after creating a repository on github.com, connect your local hello-world repository to that one:
 
+```{bash connecting local to remote by using a link}
+git remote add origin git@github.com:omqchristi/hello-world.git
 ```
 
+[git remote add (name of remote) (url from github)] linking 
 
+```{bash to change the url}
+git remote set-url origin https://github.com/omqchristi/hello-world.git
+```
 
+to double check that you did it correctly:
 
+```{bash to check what urls the remotes are linked to}
+git remote -v
+```
+
+you can have multiple remotes, but the primary one is typically named "origin".
+you can have multiple branches, but the primary one is typically named "main".
+
+````{bash push your work onto github}
+git push origin main
+```
+
+[git push (name of remoted) (name of branch)]
 
 
 
@@ -120,3 +139,9 @@ git config --global user.username
   - and maybe how to contribute to the file
 2. .gitignore is a list of files that git should not track, possibly because it has sensitive information
 3. license files is the type of license your project is under. this lets other people know how and if they can use it.
+
+```{bash}
+git add git_it_notes.Rmd
+git commit -m "updating Git It notes"
+```
+
