@@ -126,6 +126,33 @@ git push origin main
 
 [git push (name of remoted) (name of branch)]
 
+## Forking and Cloning
+
+```{bash cloning a remote from github to your own computer}
+cd ..
+git clone https://github.com/omqchristi/patchwork
+```
+
+[git clone (url from github)] 
+
+```{bash double check your clone}
+cd ../patchwork
+git remote -v
+```
+
+```{bash connect the original as an upstream so you can pull changes from the original and doubel check it}
+cd ../patchwork
+git remote add upstream https://github.com/jlord/patchwork.git
+git remote -v
+```
+
+```{bash}
+```
+
+
+
+
+
 
 
 
