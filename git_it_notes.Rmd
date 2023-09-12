@@ -97,6 +97,12 @@ git config --global user.username omqchristi
 git config --global user.username
 ```
 
+## Setting Upstream
+
+```{bash}
+git push --set-upstream origin main
+```
+
 ## Connecting Local Repository to Remote Repository
 
 after creating a repository on github.com, connect your local hello-world repository to that one:
@@ -146,19 +152,65 @@ git remote add upstream https://github.com/jlord/patchwork.git
 git remote -v
 ```
 
-```{bash}
+```{bash check to see if you are in gh-pages branch}
+cd ../patchwork
+git status
 ```
 
+```{bash create a new branch named "add-omqchristi and go into it}
+cd ../patchwork
+git branch add-omqchristi
+git checkout add-omqchristi
+```
 
+after adding a new file with your username in the CONTRIBUTORS folder, push the change to github
 
+```{bash}
+cd ../patchwork
+git add CONTRIBUTORS/add-omqchristi.txt
+git commit -m "added omqchristi"
+git push origin add-omqchristi
+```
 
+[git push (name of remote) (name of branch)]
 
+## Pulling Changes
 
+after adding reporobot, pul the changes 
 
+```{bash pull changes}
+cd ../patchwork
+git pull origin add-omqchristi
+```
+to see changes without actualing pulling use:
+[git fetch --dry-run]
 
+## Pull Requests
 
+to request that your changes get pulld upwards to the original repository, open a pull request on github.
 
-### Common Files in Public Repositories
+## Trimming Branches
+
+now that your changes have been pulled upstream, it's time to clean up your branches by deleting them locally and remotely
+
+```{bash}
+cd ../patchwork
+git checkout gh-pages # go back to the branch you want to merge into
+git merge add-omqchristi # designate what branch is being absorbed
+git branch -d add-omqchristi # delete the old branch
+git push origin --delete add-omqchristi
+```
+
+[git push (name of remote) --delete (name of branch)]
+
+## Finally, Pull the upstream version for the most up-to-date version
+
+```{bash}
+cd ../patchwork
+git pull upstream gh-pages
+```
+
+## Common Files in Public Repositories
 
 1. readme files:
   - explain what the repository does
@@ -170,5 +222,6 @@ git remote -v
 ```{bash}
 git add git_it_notes.Rmd
 git commit -m "updating Git It notes"
+git push
 ```
 
